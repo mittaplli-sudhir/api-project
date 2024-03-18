@@ -59,7 +59,7 @@ Containerize the API application using Docker to ensure easy setup and environme
 - **Functionality:** Correct CRUD operations and API behavior.
 - **Error Handling:** Appropriate error reporting and handling.
 - **Docker Integration:** Efficient containerization and docker-compose setup.
-- **Documentation:** Clear API and Docker usage documentation.
+- **Documentation:** Clear Docker usage documentation.
 
 ## Submission Instructions
 
