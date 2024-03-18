@@ -28,11 +28,6 @@ Create a REST API to manage a basic resource (e.g., users, tasks, products) with
 - **Framework:** Write unit tests for each endpoint using pytest or another testing framework.
 - **Coverage:** Ensure that tests cover all API functionalities.
 
-#### Documentation
-
-- **Tool:** Document the API endpoints using Swagger or another documentation tool.
-- **Accessibility:** Ensure documentation is accessible and easy to understand.
-
 ## Part 2: DevOps Integration
 
 ### Objective
