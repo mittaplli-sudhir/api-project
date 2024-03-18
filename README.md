@@ -4,6 +4,11 @@
 
 This technical test is designed to evaluate your skills in Python/API development with an additional focus on DevOps practices, particularly containerization using Docker. You will be required to create a simple REST API and then dockerize your application.
 
+## Submission Instructions
+
+- **Repository:** Provide a GitHub repository link with the complete project code, Dockerfiles, docker-compose file, and any additional documentation.
+- **README.md:** Ensure it clearly explains how to setup and run your application, including any prerequisites and how to execute your deployment script.
+
 ## Part 1: Python and API Development
 
 ### Objective
@@ -60,8 +65,3 @@ Containerize the API application using Docker to ensure easy setup and environme
 - **Error Handling:** Appropriate error reporting and handling.
 - **Docker Integration:** Efficient containerization and docker-compose setup.
 - **Documentation:** Clear Docker usage documentation.
-
-## Submission Instructions
-
-- **Repository:** Provide a GitHub repository link with the complete project code, Dockerfiles, docker-compose file, and any additional documentation.
-- **README.md:** Ensure it clearly explains how to setup and run your application, including any prerequisites and how to execute your deployment script.
