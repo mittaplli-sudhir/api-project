@@ -1,67 +1,114 @@
-# Technical Test: Python/API Development and DevOps
+# FastAPI Task Manager API
 
-## Overview
+This is a simple, containerized REST API built with **FastAPI**, designed to manage a collection of tasks using CRUD operations. It uses **SQLite** as a local database and provides full support for development and testing with **Docker** and **GitHub Actions** CI/CD.
 
-This technical test is designed to evaluate your skills in Python/API development with an additional focus on DevOps practices, particularly containerization using Docker. You will be required to create a simple REST API and then dockerize your application.
+---
 
-## Submission Instructions
+## 🔧 Features
 
-- **Repository:** Provide a GitHub repository link with the complete project code, Dockerfiles, docker-compose file, and any additional documentation.
-- **README.md:** Ensure it clearly explains how to setup and run your application, including any prerequisites and how to execute your deployment script.
+- FastAPI-based REST API
+- SQLite database with SQLAlchemy ORM
+- Full CRUD (Create, Read, Update, Delete) support
+- Input validation using Pydantic
+- Unit tests with `pytest`
+- Dockerized using `Dockerfile` and `docker-compose`
+- CI pipeline using GitHub Actions
+- Swagger UI for interactive API documentation
 
-## Part 1: Python and API Development
+---
 
-### Objective
+## 🚀 Quick Start
 
-Create a REST API to manage a basic resource (e.g., users, tasks, products) with CRUD (Create, Read, Update, Delete) functionality.
+### 🔹 Prerequisites
 
-### Requirements
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-#### API Specification
+---
 
-- **Framework:** Use Flask or FastAPI to create the API.
-- **Endpoints:** Define routes for creating, retrieving, updating, and deleting items of the chosen resource.
-- **Validation:** Implement validation for incoming data on creation and update endpoints.
+## 🛠️ Run the API Locally
 
-#### Data Storage
+```bash
+# 1. Unzip the project and navigate into it
+cd api_project
 
-- **Database:** Use SQLite for data storage.
-- **Schema:** Design a simple schema relevant to the managed resource.
+# 2. Run the app using Docker
+chmod +x run.sh
+./run.sh
+```
 
-#### Testing
+Open your browser and visit: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-- **Framework:** Write unit tests for each endpoint using pytest or another testing framework.
-- **Coverage:** Ensure that tests cover all API functionalities.
+---
 
-## Part 2: DevOps Integration
+## 🧪 Running Tests
 
-### Objective
+### ✅ From Docker
 
-Containerize the API application using Docker to ensure easy setup and environment consistency.
+```bash
+docker-compose exec api pytest
+```
 
-### Requirements
+### ✅ Locally (Without Docker)
 
-#### Dockerfile
+```bash
+pip install -r requirements.txt
+pytest
+```
 
-- Create a Dockerfile for your application, optimizing for minimal image size.
+---
 
-#### Docker Compose
+## 🧰 API Endpoints
 
-- **Compose File:** Create a `docker-compose.yml` file to run the API and a separate SQLite database container.
-- **Volumes:** Use volumes for database data persistence and optional live code reloading.
+| Method | Endpoint         | Description         |
+|--------|------------------|---------------------|
+| POST   | `/tasks/`        | Create a new task   |
+| GET    | `/tasks/{id}`    | Retrieve a task     |
+| PUT    | `/tasks/{id}`    | Update a task       |
+| DELETE | `/tasks/{id}`    | Delete a task       |
 
-#### Deployment Script
+You can test all these via [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI).
 
-- **Script:** Write a script (bash or shell) to build the Docker image, run the containers, and make a test request to check if the API is up.
+---
 
-#### Bonus: CI/CD Integration (Optional)
+## 📂 Project Structure
 
-- Set up a basic CI/CD pipeline (e.g., using GitHub Actions, GitLab CI/CD) to build the Docker image and run tests on commits.
+```
+api_project/
+├── app/
+│   ├── main.py         # API entry point
+│   ├── models.py       # SQLAlchemy models
+│   ├── schemas.py      # Pydantic schemas
+│   ├── crud.py         # CRUD logic
+│   └── database.py     # DB connection setup
+├── tests/              # Pytest unit tests
+├── .github/workflows/  # GitHub Actions CI
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── run.sh
+└── README.md
+```
 
-## Evaluation Criteria
+---
 
-- **Code Quality:** Including clarity, maintainability, and best practices.
-- **Functionality:** Correct CRUD operations and API behavior.
-- **Error Handling:** Appropriate error reporting and handling.
-- **Docker Integration:** Efficient containerization and docker-compose setup.
-- **Documentation:** Clear Docker usage documentation.
+## ⚙️ CI/CD
+
+This project uses GitHub Actions to:
+- Install dependencies
+- Run all unit tests on push/pull requests to `main`
+
+Config is in `.github/workflows/ci.yml`.
+
+---
+
+## 📌 Notes
+
+- The database (`tasks.db`) is stored inside the Docker volume.
+- You can remove the DB file to reset data.
+
+---
+
+## 📬 Contact
+
+Feel free to reach out for improvements, deployment help, or PostgreSQL integration.
